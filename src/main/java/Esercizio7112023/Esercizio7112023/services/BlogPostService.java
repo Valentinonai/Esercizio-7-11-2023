@@ -57,7 +57,7 @@ public class BlogPostService {
         Random rnd=new Random();
         p.setId(rnd.nextInt(1,10000));
         blogPosts.add(p);
-        String obj=p.getId()+"@"+p.getCategoria()+"@"+p.getTitolo()+"@"+p.getCover()+"@"+p.getContenuto()+"@"+p.getTempoDiLettura()+"#";
+        String obj=p.getId()+"@"+p.getCategoria()+"@"+p.getTitolo()+"@"+"https://picsum.photos/200/300"+"@"+p.getContenuto()+"@"+p.getTempoDiLettura()+"#";
         FileUtils.writeStringToFile(blogPostFile,obj, StandardCharsets.UTF_8,true);
         return p.getId();
     }
@@ -80,7 +80,7 @@ public class BlogPostService {
                 blogPosts.get(i).setContenuto(p.getContenuto());
                 blogPosts.get(i).setCategoria(p.getCategoria());
                 blogPosts.get(i).setTitolo(p.getTitolo());
-                blogPosts.get(i).setCover(p.getCover());
+                blogPosts.get(i).setCover("https://picsum.photos/200/300");
                 blogPosts.get(i).setTempoDiLettura(p.getTempoDiLettura());
                 FileUtils.writeStringToFile(blogPostFile,"", StandardCharsets.UTF_8);
                 for(int j=0;j<blogPosts.size();j++){

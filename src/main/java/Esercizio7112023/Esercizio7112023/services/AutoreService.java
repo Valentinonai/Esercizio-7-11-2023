@@ -62,7 +62,7 @@ public class AutoreService {
     public int saveNewAuthor(Autore a) throws IOException {
         Random rnd=new Random();
         a.setId(rnd.nextInt(1,10000));
-        a.setAvatar(a.getNome()+" "+a.getCognome());
+        a.setAvatar("https://ui-avatars.com/api/?name="+a.getNome()+"+"+a.getCognome());
         autoreList.add(a);
             String obj=a.getId()+"£"+a.getNome()+"£"+a.getCognome()+"£"+a.getEmail()+"£"+a.getDataDiNascita().toString()+"£"+a.getAvatar()+"#";
             FileUtils.writeStringToFile(authorFile,obj, StandardCharsets.UTF_8,true);
@@ -88,7 +88,7 @@ public class AutoreService {
                  autoreList.get(i).setCognome(a.getCognome());
                  autoreList.get(i).setEmail(a.getEmail());
                  autoreList.get(i).setDataDiNascita(a.getDataDiNascita());
-                 autoreList.get(i).setNome(a.getNome()+" "+a.getCognome());
+                 autoreList.get(i).setAvatar("https://ui-avatars.com/api/?name="+a.getNome()+"+"+a.getCognome());
                 FileUtils.writeStringToFile(authorFile,"", StandardCharsets.UTF_8);
                 for(int j=0;j<autoreList.size();j++){
                     String obj=autoreList.get(j).getId()+"£"+autoreList.get(j).getNome()+"£"+autoreList.get(j).getCognome()+"£"+autoreList.get(j).getEmail()+"£"+autoreList.get(j).getDataDiNascita().toString()+"£"+autoreList.get(j).getAvatar()+"#";
