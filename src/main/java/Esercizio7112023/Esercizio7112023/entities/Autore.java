@@ -13,6 +13,6 @@ public class Autore {
     private String nome;
     private String cognome;
     private String email;
-    private String dataDiNascita;
+    private LocalDate dataDiNascita;
     private String avatar;
 }

@@ -28,7 +28,7 @@ public class AutoreService {
             List<String> str = new ArrayList<>(List.of(fileReader.split("#")));
             for (int i = 0; i < str.size(); i++) {
                 List<String> app = new ArrayList<>(List.of(str.get(i).split("£")));
-                autoreList.add(new Autore(Integer.parseInt(app.get(0)), app.get(1), app.get(2), app.get(3), app.get(4), app.get(5)));
+                autoreList.add(new Autore(Integer.parseInt(app.get(0)), app.get(1), app.get(2), app.get(3),LocalDate.parse(app.get(4)) , app.get(5)));
             }
 
         } catch (IOException e) {
@@ -43,7 +43,7 @@ public class AutoreService {
             List<String> str = new ArrayList<>(List.of(fileReader.split("#")));
             for (int i = 0; i < str.size(); i++) {
                 List<String> app = new ArrayList<>(List.of(str.get(i).split("£")));
-                autoreList.add(new Autore(Integer.parseInt(app.get(0)), app.get(1), app.get(2), app.get(3),app.get(4), app.get(5)));
+                autoreList.add(new Autore(Integer.parseInt(app.get(0)), app.get(1), app.get(2), app.get(3),LocalDate.parse(app.get(4)), app.get(5)));
             }
 
         } catch (IOException e) {
@@ -64,7 +64,7 @@ public class AutoreService {
         a.setId(rnd.nextInt(1,10000));
         a.setAvatar(a.getNome()+" "+a.getCognome());
         autoreList.add(a);
-            String obj=a.getId()+"£"+a.getNome()+"£"+a.getCognome()+"£"+a.getEmail()+"£"+a.getDataDiNascita()+"£"+a.getAvatar()+"#";
+            String obj=a.getId()+"£"+a.getNome()+"£"+a.getCognome()+"£"+a.getEmail()+"£"+a.getDataDiNascita().toString()+"£"+a.getAvatar()+"#";
             FileUtils.writeStringToFile(authorFile,obj, StandardCharsets.UTF_8,true);
         return a.getId();
     }
@@ -76,7 +76,7 @@ public class AutoreService {
             List<String> str = new ArrayList<>(List.of(fileReader.split("#")));
             for (int i = 0; i < str.size(); i++) {
                 List<String> app = new ArrayList<>(List.of(str.get(i).split("£")));
-                autoreList.add(new Autore(Integer.parseInt(app.get(0)),app.get(1),app.get(2),app.get(3),(app.get(4)),app.get(5)));
+                autoreList.add(new Autore(Integer.parseInt(app.get(0)),app.get(1),app.get(2),app.get(3),LocalDate.parse(app.get(4)),app.get(5)));
             }
 
         } catch (IOException e) {
@@ -91,7 +91,7 @@ public class AutoreService {
                  autoreList.get(i).setNome(a.getNome()+" "+a.getCognome());
                 FileUtils.writeStringToFile(authorFile,"", StandardCharsets.UTF_8);
                 for(int j=0;j<autoreList.size();j++){
-                    String obj=autoreList.get(j).getId()+"£"+autoreList.get(j).getNome()+"£"+autoreList.get(j).getCognome()+"£"+autoreList.get(j).getEmail()+"£"+autoreList.get(j).getDataDiNascita()+"£"+autoreList.get(j).getAvatar()+"#";
+                    String obj=autoreList.get(j).getId()+"£"+autoreList.get(j).getNome()+"£"+autoreList.get(j).getCognome()+"£"+autoreList.get(j).getEmail()+"£"+autoreList.get(j).getDataDiNascita().toString()+"£"+autoreList.get(j).getAvatar()+"#";
                     FileUtils.writeStringToFile(authorFile,obj, StandardCharsets.UTF_8,true);
                 }
                 return autoreList.get(i);
@@ -107,7 +107,7 @@ public class AutoreService {
             List<String> str = new ArrayList<>(List.of(fileReader.split("#")));
             for (int i = 0; i < str.size(); i++) {
                 List<String> app = new ArrayList<>(List.of(str.get(i).split("£")));
-                autoreList.add(new Autore(Integer.parseInt(app.get(0)),app.get(1),app.get(2),app.get(3),app.get(4),app.get(5)));
+                autoreList.add(new Autore(Integer.parseInt(app.get(0)),app.get(1),app.get(2),app.get(3),LocalDate.parse(app.get(4)),app.get(5)));
             }
 
         } catch (IOException e) {
@@ -122,7 +122,7 @@ public class AutoreService {
         }
         FileUtils.writeStringToFile(authorFile,"", StandardCharsets.UTF_8);
         for(int j=0;j<autoreList.size();j++){
-            String obj=autoreList.get(j).getId()+"£"+autoreList.get(j).getNome()+"£"+autoreList.get(j).getCognome()+"£"+autoreList.get(j).getEmail()+"£"+autoreList.get(j).getDataDiNascita()+"£"+autoreList.get(j).getAvatar()+"#";
+            String obj=autoreList.get(j).getId()+"£"+autoreList.get(j).getNome()+"£"+autoreList.get(j).getCognome()+"£"+autoreList.get(j).getEmail()+"£"+autoreList.get(j).getDataDiNascita().toString()+"£"+autoreList.get(j).getAvatar()+"#";
             FileUtils.writeStringToFile(authorFile,obj, StandardCharsets.UTF_8,true);
         }
     }
